@@ -111,7 +111,7 @@ module.exports = function(app, express, io) {
 					res.send({ message: "Invalid Password"});
 				} else {
 
-					///// token
+				
 					var token = createToken(user);
 
 					res.json({
@@ -131,7 +131,7 @@ module.exports = function(app, express, io) {
 
 		var token = req.body.token || req.param('token') || req.headers['x-access-token'];
 
-		// check if token exist
+
 		if(token) {
 
 			jsonwebtoken.verify(token, secretKey, function(err, decoded) {
@@ -154,7 +154,7 @@ module.exports = function(app, express, io) {
 
 	
 
-	// Destination B // provide a legitimate token
+	//access contents after verification
 
 	api.route('/')
 
